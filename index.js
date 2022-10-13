@@ -1,27 +1,9 @@
-const mathematicalAction = prompt('Введіть дію(add, sub, mult, div), яку бажаете зробити.');
-const firstNumber = +prompt('Введіть перше число.');
-const secondNumber = +prompt('Введіть друге число.');
-let example;
-let result;
-
-
-if (mathematicalAction === 'add' || mathematicalAction === '+') {
-	result = firstNumber + secondNumber;
-	example = `${firstNumber} + ${secondNumber}`;
-	alert(`${example} = ${result}`);
-} else if (mathematicalAction === 'sub' || mathematicalAction === '-') {
-	result = firstNumber - secondNumber;
-	example = `${firstNumber} - ${secondNumber}`;
-	alert(`${example} = ${result}`);
-} else if (mathematicalAction ==='mult' || mathematicalAction === '*') {
-	result = firstNumber * secondNumber;
-	example = `${firstNumber} * ${secondNumber}`;
-	alert(`${example} = ${result}`);
-} else if (mathematicalAction === 'div' || mathematicalAction === '/') {
-	result = firstNumber / secondNumber;
-	example = `${firstNumber} / ${secondNumber}`;
-	alert(`${example} = ${result}`);
+const hours = +prompt('Введите количество часов, которое нужно перевести в секунды.')
+let hoursStr;
+if (hours === 1) {
+	hoursStr = 'часу.'
 } else {
-	result = 'Неправильно введені данні';
-	alert(result);
+	hoursStr = 'часах.'
 }
+let result = `${hours * 3600} секунд в ${hours} ${hoursStr}`;
+alert(result);
