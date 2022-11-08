@@ -20,17 +20,25 @@ for (let count = 1; count <= 100; count += 1) {
 
 document.write(`<br> Дане ціле число. З'ясувати, чи є воно простим (простим називається число, більше 1, які не мають інших дільників крім 1 і себе):   `);
 
-const integer = +prompt('Введите целое число.')
-let result = ` `;
-for (let count = 2; count < integer; count += 1) {
-	if (integer % count === 0) {
-		result = `Число ${integer} не простое.`;
-		break
-	} else {
-		result = `Число ${integer} простое.`;
-	}
+const numberPrime = parseInt(prompt("Введите число: "));
+let isPrime = true;
+if (numberPrime <= 1) {
+    document.write("1 и ниже не простые числа");
 }
-document.write(result);
+else if (numberPrime > 1) {
+  for (let i = 2; i < numberPrime; i++) {
+    if (numberPrime % i === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+  if (isPrime) {
+    document.write(`${numberPrime} простое число`);
+  } else {
+    document.write(`${numberPrime} не простое число`);
+  }
+}
+
 
 document.write(`<br> Дане деяке число. Визначити, чи можна одержати це число шляхом зведення числа 3 у деякий ступінь. (Наприклад, числа 9, 81 можна отримати, а 13 - не можна):   `);
 
